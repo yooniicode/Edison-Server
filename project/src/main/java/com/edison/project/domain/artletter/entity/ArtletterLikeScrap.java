@@ -14,7 +14,7 @@ import lombok.Setter;
         @Index(name = "idx_artletter_likes_artletter_id", columnList = "artletter_id"),
         @Index(name = "idx_artletter_likes_member_id", columnList = "member_id")
 })
-public class ArtletterLikes {
+public class ArtletterLikeScrap {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,4 +28,10 @@ public class ArtletterLikes {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id", nullable = false)
     private Member member;
+
+    @Column(name = "is_liked", nullable = false)
+    private Boolean isLiked; // true: 좋아요, false: 좋아요 취소
+
+    @Column(name = "is_scrapped", nullable = false)
+    private Boolean isScrapped; // true: 좋아요, false: 좋아요 취소
 }
