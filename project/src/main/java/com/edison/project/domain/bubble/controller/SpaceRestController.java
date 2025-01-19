@@ -3,11 +3,13 @@ package com.edison.project.domain.bubble.controller;
 import com.edison.project.domain.bubble.service.PcaReducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/bubbles")
 @RequiredArgsConstructor
-public class SpaceController {
+public class SpaceRestController {
 
     private final PcaReducer pcaReducer;
 
